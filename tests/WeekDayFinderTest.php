@@ -32,5 +32,20 @@
             $this->assertEquals("Wednesday", $result);
         }
 
+        /*
+        input: 03/13/2015
+        output: "Friday"
+        Spec: Enter the date 3/13/2015 because it's tomorrow and return the string "Friday"
+        */
+        function test_findDay_tomorrow() {
+            $test_weekDayFinder = new WeekDayFinder;
+            $input = "03/13/2015";
+
+            $result = $test_weekDayFinder->findDay($input);
+
+            $this->assertEquals("Friday", $result);
+        }
+
+        
     }
  ?>
