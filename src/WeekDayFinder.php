@@ -15,7 +15,7 @@
             //each number cooresponds to
             $days_in_month = array(1 => 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
             //days of the week in order from today
-            $weekdays = array("Thurday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday");
+            $weekdays = array("Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday");
 
             //the input array for the date enter
             //Ex ["03", "12", "2015"]
@@ -52,11 +52,14 @@
 
             echo $number_of_days;
 
-            $difference_of_days = abs($number_of_days - $days_to_today);
+            $difference_of_days = $number_of_days - $days_to_today;
 
-
-            return $weekdays[$difference_of_days % 7];
-
+            if($difference_of_days < 0) {
+                return $weekdays[(7 + $difference_of_days & 7)];
+            }
+            else {
+                return $weekdays[$difference_of_days % 7];
+            }
         }
     }
 
