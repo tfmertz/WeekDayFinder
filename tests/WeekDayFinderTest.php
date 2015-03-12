@@ -18,6 +18,19 @@
             $this->assertEquals("Thursday", $result);
         }
 
+        /*
+        input: 03/11/2015
+        output: "Wednesday"
+        Spec: Enter the date 3/11/2015 because it's yesterday and return the string "Wednesday"
+        */
+        function test_findDay_yesterday() {
+            $test_weekDayFinder = new WeekDayFinder;
+            $input = "03/11/2015";
+
+            $result = $test_weekDayFinder->findDay($input);
+
+            $this->assertEquals("Wednesday", $result);
+        }
 
     }
  ?>
