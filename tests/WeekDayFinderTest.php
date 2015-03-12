@@ -115,5 +115,33 @@
 
             $this->assertEquals("Thursday", $result);
         }
+
+        /*
+        input: 03/12/2016
+        output: "Thursday"
+        Spec: Enter the date 03/12/2016 because it is one year from now and return the string "Saturday"
+        */
+        function test_findDay_oneYear() {
+            $test_weekDayFinder = new WeekDayFinder;
+            $input = "03/12/2016";
+
+            $result = $test_weekDayFinder->findDay($input);
+
+            $this->assertEquals("Saturday", $result);
+        }
+
+        /*
+        input: 03/12/2014
+        output: "Thursday"
+        Spec: Enter the date 03/12/2014 because it is one year ago and return the string "Wednesday"
+        */
+        function test_findDay_oneYearAgo() {
+            $test_weekDayFinder = new WeekDayFinder;
+            $input = "03/12/2014";
+
+            $result = $test_weekDayFinder->findDay($input);
+
+            $this->assertEquals("Wednesday", $result);
+        }
     }
  ?>
