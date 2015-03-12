@@ -101,5 +101,19 @@
 
             $this->assertEquals("Thursday", $result);
         }
+
+        /*
+        input: 12/31/2015
+        output: "Thursday"
+        Spec: Enter the date 11/31/2015 because it's the last Thursday in the year and return the string "Thursday"
+        */
+        function test_findDay_lastDayOfYear() {
+            $test_weekDayFinder = new WeekDayFinder;
+            $input = "12/31/2015";
+
+            $result = $test_weekDayFinder->findDay($input);
+
+            $this->assertEquals("Thursday", $result);
+        }
     }
  ?>
