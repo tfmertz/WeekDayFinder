@@ -23,11 +23,6 @@
             $s_input_date = $input_date[1];
             $s_input_month = $input_date[0];
             $s_input_year = $input_date[2];
-            //number of day's since start of year
-            $number_of_days = 0;
-
-            //information for today's date
-            $days_to_today = 71;
 
             echo "M " . $input_date[0] . " - ";
 
@@ -37,6 +32,12 @@
             $input_date = intval($s_input_date);
             $input_month = intval($s_input_month);
             $input_year = intval($s_input_year);
+
+            //number of day's since start of year
+            $number_of_days = ($input_year - 2015) * 365;
+
+            //information for today's date
+            $days_to_today = 71;
 
             echo $input_date . " D - ";
             echo $input_month . " M - ";
