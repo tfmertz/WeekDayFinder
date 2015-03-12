@@ -33,6 +33,20 @@
         }
 
         /*
+        input: 03/10/2015
+        output: "Tuesday"
+        Spec: Enter the date 3/10/2015 because it's 2 days ago and return the string "Tuesday"
+        */
+        function test_findDay_twoDaysAgo() {
+            $test_weekDayFinder = new WeekDayFinder;
+            $input = "03/10/2015";
+
+            $result = $test_weekDayFinder->findDay($input);
+
+            $this->assertEquals("Tuesday", $result);
+        }
+
+        /*
         input: 03/13/2015
         output: "Friday"
         Spec: Enter the date 3/13/2015 because it's tomorrow and return the string "Friday"
@@ -68,6 +82,20 @@
         function test_findDay_lastWeek() {
             $test_weekDayFinder = new WeekDayFinder;
             $input = "03/05/2015";
+
+            $result = $test_weekDayFinder->findDay($input);
+
+            $this->assertEquals("Thursday", $result);
+        }
+
+        /*
+        input: 01/01/2015
+        output: "Thursday"
+        Spec: Enter the date 1/01/2015 because it's the first Thursday in the year and return the string "Thursday"
+        */
+        function test_findDay_firstDayOfYear() {
+            $test_weekDayFinder = new WeekDayFinder;
+            $input = "01/01/2015";
 
             $result = $test_weekDayFinder->findDay($input);
 
